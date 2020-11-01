@@ -1,5 +1,6 @@
 class AlunosController < ApplicationController
   before_action :set_aluno, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token, only: [:create]
 
   # GET /alunos
   # GET /alunos.json
