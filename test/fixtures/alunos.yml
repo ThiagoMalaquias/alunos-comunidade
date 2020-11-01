@@ -1,0 +1,59 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  callback_type: 1
+  hottok: MyString
+  aff: MyString
+  aff_name: MyString
+  currency: MyString
+  transaction: MyString
+  xcode: MyString
+  payment_type: MyString
+  payment_engine: MyString
+  status: MyString
+  prod: MyString
+  prod_name: MyString
+  producer_name: MyString
+  purchase_date: MyString
+  confirmation_purchase_date: MyString
+  original_offer_price: MyString
+  cms_marketplace: 1.5
+  cms_vendor: 1.5
+  price: 1.5
+  full_price: 1.5
+  name_subscription_plan: MyString
+  email: MyString
+  name: MyString
+  first_name: MyString
+  last_name: MyString
+  phone_checkout_local_code: MyString
+  phone_checkout_number: MyString
+
+two:
+  callback_type: 1
+  hottok: MyString
+  aff: MyString
+  aff_name: MyString
+  currency: MyString
+  transaction: MyString
+  xcode: MyString
+  payment_type: MyString
+  payment_engine: MyString
+  status: MyString
+  prod: MyString
+  prod_name: MyString
+  producer_name: MyString
+  purchase_date: MyString
+  confirmation_purchase_date: MyString
+  original_offer_price: MyString
+  cms_marketplace: 1.5
+  cms_vendor: 1.5
+  price: 1.5
+  full_price: 1.5
+  name_subscription_plan: MyString
+  email: MyString
+  name: MyString
+  first_name: MyString
+  last_name: MyString
+  phone_checkout_local_code: MyString
+  phone_checkout_number: MyString
