@@ -1,7 +1,7 @@
 class CreateAlunos < ActiveRecord::Migration[6.0]
   def change
     create_table :alunos do |t|
-      t.integer :callback_type
+      t.string :callback_type
       t.string :hottok
       t.string :aff
       t.string :aff_name
@@ -15,10 +15,10 @@ class CreateAlunos < ActiveRecord::Migration[6.0]
       t.string :purchase_date
       t.string :confirmation_purchase_date
       t.string :original_offer_price
-      t.float :cms_marketplace
-      t.float :cms_vendor
-      t.float :price
-      t.float :full_price
+      t.string :cms_marketplace
+      t.string :cms_vendor
+      t.string :price
+      t.string :full_price
       t.string :name_subscription_plan
       t.string :email
       t.string :name
