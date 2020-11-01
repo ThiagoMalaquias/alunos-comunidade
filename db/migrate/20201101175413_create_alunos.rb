@@ -8,7 +8,6 @@ class CreateAlunos < ActiveRecord::Migration[6.0]
       t.string :currency
       t.string :xcode
       t.string :payment_type
-      t.string :payment_engine
       t.string :status
       t.string :prod
       t.string :prod_name

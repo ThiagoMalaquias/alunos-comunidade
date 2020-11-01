@@ -8,7 +8,6 @@ one:
   currency: MyString
   xcode: MyString
   payment_type: MyString
-  payment_engine: MyString
   status: MyString
   prod: MyString
   prod_name: MyString
@@ -36,7 +35,6 @@ two:
   currency: MyString
   xcode: MyString
   payment_type: MyString
-  payment_engine: MyString
   status: MyString
   prod: MyString
   prod_name: MyString

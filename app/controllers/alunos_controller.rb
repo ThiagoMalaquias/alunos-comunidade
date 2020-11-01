@@ -69,6 +69,6 @@ class AlunosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def aluno_params
-      params.require(:aluno).permit(:callback_type, :hottok, :aff, :aff_name, :currency, :xcode, :payment_type, :payment_engine, :status, :prod, :prod_name, :producer_name, :purchase_date, :confirmation_purchase_date, :original_offer_price, :cms_marketplace, :cms_vendor, :price, :full_price, :name_subscription_plan, :email, :name, :first_name, :last_name, :phone_checkout_local_code, :phone_checkout_number)
+      params.require(:aluno).permit(:callback_type, :hottok, :aff, :aff_name, :currency, :xcode, :payment_type, :status, :prod, :prod_name, :producer_name, :purchase_date, :confirmation_purchase_date, :original_offer_price, :cms_marketplace, :cms_vendor, :price, :full_price, :name_subscription_plan, :email, :name, :first_name, :last_name, :phone_checkout_local_code, :phone_checkout_number)
     end
 end

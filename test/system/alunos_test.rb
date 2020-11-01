@@ -29,7 +29,6 @@ class AlunosTest < ApplicationSystemTestCase
     fill_in "Name", with: @aluno.name
     fill_in "Name subscription plan", with: @aluno.name_subscription_plan
     fill_in "Original offer price", with: @aluno.original_offer_price
-    fill_in "Payment engine", with: @aluno.payment_engine
     fill_in "Payment type", with: @aluno.payment_type
     fill_in "Phone checkout local code", with: @aluno.phone_checkout_local_code
     fill_in "Phone checkout number", with: @aluno.phone_checkout_number
@@ -65,7 +64,6 @@ class AlunosTest < ApplicationSystemTestCase
     fill_in "Name", with: @aluno.name
     fill_in "Name subscription plan", with: @aluno.name_subscription_plan
     fill_in "Original offer price", with: @aluno.original_offer_price
-    fill_in "Payment engine", with: @aluno.payment_engine
     fill_in "Payment type", with: @aluno.payment_type
     fill_in "Phone checkout local code", with: @aluno.phone_checkout_local_code
     fill_in "Phone checkout number", with: @aluno.phone_checkout_number
