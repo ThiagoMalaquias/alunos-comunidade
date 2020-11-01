@@ -26,11 +26,16 @@ class AlunosController < ApplicationController
   # POST /alunos.json
   def create
     if request.path_parameters[:format] == 'json'
-      @aluno = Aluno.new(params)
-    else
-      @aluno = Aluno.new(aluno_params)
-    end
+      aluno = Aluno.new
+      aluno.callback_type = params[:callback_type]
+      aluno.save!
 
+      render json: aluno.to_json, status: 200
+    end
+    
+    
+    @aluno = Aluno.new(aluno_params)
+    
     respond_to do |format|
       if @aluno.save
         format.html { redirect_to @aluno, notice: 'Aluno was successfully created.' }
