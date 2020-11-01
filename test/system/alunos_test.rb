@@ -39,7 +39,6 @@ class AlunosTest < ApplicationSystemTestCase
     fill_in "Producer name", with: @aluno.producer_name
     fill_in "Purchase date", with: @aluno.purchase_date
     fill_in "Status", with: @aluno.status
-    fill_in "Transaction", with: @aluno.transaction
     fill_in "Xcode", with: @aluno.xcode
     click_on "Create Aluno"
 
@@ -76,7 +75,6 @@ class AlunosTest < ApplicationSystemTestCase
     fill_in "Producer name", with: @aluno.producer_name
     fill_in "Purchase date", with: @aluno.purchase_date
     fill_in "Status", with: @aluno.status
-    fill_in "Transaction", with: @aluno.transaction
     fill_in "Xcode", with: @aluno.xcode
     click_on "Update Aluno"
 

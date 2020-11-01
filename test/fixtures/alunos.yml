@@ -6,7 +6,6 @@ one:
   aff: MyString
   aff_name: MyString
   currency: MyString
-  transaction: MyString
   xcode: MyString
   payment_type: MyString
   payment_engine: MyString
@@ -35,7 +34,6 @@ two:
   aff: MyString
   aff_name: MyString
   currency: MyString
-  transaction: MyString
   xcode: MyString
   payment_type: MyString
   payment_engine: MyString
