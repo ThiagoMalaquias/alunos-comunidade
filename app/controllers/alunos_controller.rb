@@ -24,7 +24,11 @@ class AlunosController < ApplicationController
   # POST /alunos
   # POST /alunos.json
   def create
-    @aluno = Aluno.new(aluno_params)
+    if request.path_parameters[:format] == 'json'
+      @aluno = Aluno.new(params)
+    else
+      @aluno = Aluno.new(aluno_params)
+    end
 
     respond_to do |format|
       if @aluno.save
