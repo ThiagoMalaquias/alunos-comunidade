@@ -25,14 +25,13 @@ class AlunosController < ApplicationController
   # POST /alunos
   # POST /alunos.json
   def create
-    if request.path_parameters[:format] == 'json'
-      aluno = Aluno.new
-      aluno.callback_type = params[:callback_type]
-      aluno.save!
+    # if request.path_parameters[:format] == 'json'
+    #   aluno = Aluno.new
+    #   aluno.callback_type = params[:callback_type]
+    #   aluno.save!
 
-      render json: aluno.to_json, status: 200
-    end
-    
+    #   render json: aluno.to_json, status: 200
+    # end
     
     @aluno = Aluno.new(aluno_params)
     
