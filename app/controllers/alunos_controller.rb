@@ -26,7 +26,7 @@ class AlunosController < ApplicationController
   # POST /alunos.json
   def create
     if request.path_parameters[:format] == 'json'
-      @aluno = Aluno.new
+      @aluno = Aluno.where(hottok: params[:hottok], email:params[:email]) || Aluno.new
       @aluno.callback_type = params[:callback_type]
       @aluno.hottok = params[:hottok]
       @aluno.aff = params[:aff]
