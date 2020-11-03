@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_01_193129) do
+ActiveRecord::Schema.define(version: 2020_11_03_115737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 2020_11_01_193129) do
     t.string "prod_name"
     t.string "producer_name"
     t.string "purchase_date"
-    t.string "confirmation_purchase_date"
     t.string "original_offer_price"
     t.string "cms_marketplace"
     t.string "cms_vendor"
@@ -52,6 +51,7 @@ ActiveRecord::Schema.define(version: 2020_11_01_193129) do
     t.string "phone_checkout_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "confirmation_purchase_date"
   end
 
 end
