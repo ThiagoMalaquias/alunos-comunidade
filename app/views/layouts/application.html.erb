@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AlunosComunidade</title>
+    <title>Alunos da Comunidade</title>
+    <meta charset="utf-8" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+  <!-- Header -->
+    <header id="header">
+      <div class="inner">
+        <a href="/" class="logo">introspect</a>
+        <nav id="nav">
+          <a href="/">Home</a>
+          <a href="/generic">Generic</a>
+          <a href="/elements">Elements</a>
+        </nav>
+      </div>
+    </header>
+    <a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 
-  <body>
     <%= yield %>
+
+    <!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
   </body>
 </html>
