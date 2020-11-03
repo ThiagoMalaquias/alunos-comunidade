@@ -1,24 +1,54 @@
 <!-- Banner -->
 <section id="banner">
   <div class="inner">
-    <h1>Introspect: <span>A free + fully responsive<br />
-    site template by TEMPLATED</span></h1>
+    <h1><span>Viva como se fosse morrer amanhã. <br/> Aprenda como se fosse viver para sempre.</span></h1>
     <ul class="actions">
-      <li><a href="#" class="button alt">Get Started</a></li>
+      <li><a href="#two" class="button alt">Get Started</a></li>
     </ul>
   </div>
 </section>
 
 <!-- One -->
-<section id="one">
+<section id="one" style="background-image: linear-gradient(#fff, #f1f1f1);">
   <div class="inner">
     <header>
-      <h2>Magna Etiam Lorem</h2>
+      <h2>Nossos Ideais</h2>
     </header>
-    <p>Suspendisse mauris. Fusce accumsan mollis eros. Pellentesque a diam sit amet mi ullamcorper vehicula. Integer adipiscin sem. Nullam quis massa sit amet nibh viverra malesuada. Nunc sem lacus, accumsan quis, faucibus non, congue vel, arcu, erisque hendrerit tellus. Integer sagittis. Vivamus a mauris eget arcu gravida tristique. Nunc iaculis mi in ante.</p>
-    <ul class="actions">
-      <li><a href="#" class="button alt">Learn More</a></li>
+    <p>Somos uma comunidade que se importa com sua evolução, por isso você vai aprender através de mentorias.</p>
+    <p>Benefícios de aprender por mentorias:</p>
+    <ul>
+      <li>Aprenda com quem tem experiência.</li>
+      <li>Aprenda com os erros e acertos do seu mentor.</li>
+      <li>Tenha auxílio e direcionamento do que fazer sempre.</li>
+      <li>Encurte o máximo a curva de aprendizado.</li>
     </ul>
+  </div>
+</section>
+
+<!-- Three -->
+<section id="three">
+  <header>
+    <h2 style="text-align: center;">Alunos</h2>
+  </header>
+  <div class="inner alunos">
+    <%@alunos.each do |aluno|%>
+    <article>
+      <div class="content">
+        <header>
+          <h3 style=" text-align: center;"><%= aluno.name%></h3>
+        </header>
+        <p>
+          <strong>Email:</strong>
+          <%= aluno.email %>
+
+          <strong>Telefone:</strong>
+          <a href="https://api.whatsapp.com/send?phone=55<%= aluno.phone_checkout_local_code %><%= aluno.phone_checkout_number%>&amp;text=Fala%20<%= aluno.name%>%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20o%20Thiago%20do%20Torne-se%20um%20Programador.%0A" target="_blank">
+            (<%= aluno.phone_checkout_local_code %>) <%= aluno.phone_checkout_number%>
+          </a>
+        </p>
+      </div>
+    </article>
+    <%end%>
   </div>
 </section>
 
