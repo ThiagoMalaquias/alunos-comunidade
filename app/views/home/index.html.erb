@@ -28,27 +28,36 @@
 <!-- Three -->
 <section id="three">
   <header>
-    <h2 style="text-align: center;">Alunos</h2>
+    <h2 class="text-center mb-4">Alunos</h2>
   </header>
   <div class="inner alunos">
+    <div class="row">
     <%@alunos.each do |aluno|%>
-    <article>
-      <div class="content">
-        <header>
-          <h3 style=" text-align: center;"><%= aluno.name%></h3>
-        </header>
-        <p>
-          <strong>Email:</strong>
-          <%= aluno.email %>
-
-          <strong>Telefone:</strong>
-          <a href="https://api.whatsapp.com/send?phone=55<%= aluno.phone_checkout_local_code %><%= aluno.phone_checkout_number%>&amp;text=Fala%20<%= aluno.name%>%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20o%20Thiago%20do%20Torne-se%20um%20Programador.%0A" target="_blank">
-            (<%= aluno.phone_checkout_local_code %>) <%= aluno.phone_checkout_number%>
-          </a>
-        </p>
+      <div class="col-md-4">
+        <a href="/alunos/<%= aluno.id %>" style="cursor: pointer; text-decoration: none;">
+          <div class="content mb-4">
+            <header>
+              <h3 class="text-center"><%= aluno.name%></h3>
+            </header>
+            <div>
+              <strong>Email:</strong>
+              <span style="font-size: 17px"><%= aluno.email %></span>
+  
+              <br>
+              <strong>Telefone:</strong>
+              <a href="https://api.whatsapp.com/send?phone=55<%= aluno.phone_checkout_local_code %><%= aluno.phone_checkout_number%>&amp;text=Fala%20<%= aluno.first_name%> <%= aluno.last_name%>%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20o%20Thiago%20do%20Torne-se%20um%20Programador.%0A" target="_blank">
+                (<%= aluno.phone_checkout_local_code %>) <%= aluno.phone_checkout_number%>
+              </a>
+  
+              <br>
+              <strong>Plano:</strong>
+              <span style="font-size: 17px;"><%= aluno.name_subscription_plan %></span>
+            </div>
+          </div>
+        </a>
       </div>
-    </article>
-    <%end%>
+      <%end%>
+    </div>
   </div>
 </section>
 
