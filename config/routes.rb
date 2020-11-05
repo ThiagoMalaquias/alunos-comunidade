@@ -9,6 +9,6 @@ Rails.application.routes.draw do
 
   #==================== API ============================================================
   match '/alunos', to: 'application#options', via: :options
-
+  match "/serviceworker.js", to: 'application#options', via: [:get, :post]
 
 end
