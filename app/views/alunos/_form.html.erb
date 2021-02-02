@@ -11,132 +11,190 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :callback_type %>
-    <%= form.number_field :callback_type %>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :callback_type %>
+        <%= form.number_field :callback_type, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :hottok %>
+        <%= form.text_field :hottok, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :aff %>
+        <%= form.text_field :aff, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= form.label :aff_name %>
+        <%= form.text_field :aff_name, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= form.label :currency %>
+        <%= form.text_field :currency, class: 'form-control' %>
+      </div>
+    </div>
+
+    
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= form.label :xcode %>
+        <%= form.text_field :xcode, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= form.label :payment_type %>
+        <%= form.text_field :payment_type, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label :status %>
+        <%= form.text_field :status, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label :prod %>
+        <%= form.text_field :prod, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :prod_name %>
+        <%= form.text_field :prod_name, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :producer_name %>
+        <%= form.text_field :producer_name, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :purchase_date %>
+        <%= form.text_field :purchase_date, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label :confirmation_purchase_date %>
+        <%= form.date_field :confirmation_purchase_date, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label :original_offer_price %>
+        <%= form.text_field :original_offer_price, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= form.label :cms_marketplace %>
+        <%= form.text_field :cms_marketplace, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= form.label :cms_vendor %>
+        <%= form.text_field :cms_vendor, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= form.label :price %>
+        <%= form.text_field :price, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= form.label :full_price %>
+        <%= form.text_field :full_price, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :name_subscription_plan %>
+        <%= form.text_field :name_subscription_plan, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :email %>
+        <%= form.text_field :email, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label :first_name %>
+        <%= form.text_field :first_name, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="col-md-6">
+      <div class="form-group">
+        <%= form.label :last_name %>
+        <%= form.text_field :last_name, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :phone_checkout_local_code %>
+        <%= form.text_field :phone_checkout_local_code, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :phone_checkout_number %>
+        <%= form.text_field :phone_checkout_number, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= form.label :vencimento %>
+        <%= form.text_field :vencimento, class: 'form-control' %>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :hottok %>
-    <%= form.text_field :hottok %>
-  </div>
-
-  <div class="field">
-    <%= form.label :aff %>
-    <%= form.text_field :aff %>
-  </div>
-
-  <div class="field">
-    <%= form.label :aff_name %>
-    <%= form.text_field :aff_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :currency %>
-    <%= form.text_field :currency %>
-  </div>
-
-  <div class="field">
-    <%= form.label :xcode %>
-    <%= form.text_field :xcode %>
-  </div>
-
-  <div class="field">
-    <%= form.label :payment_type %>
-    <%= form.text_field :payment_type %>
-  </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status %>
-  </div>
-
-  <div class="field">
-    <%= form.label :prod %>
-    <%= form.text_field :prod %>
-  </div>
-
-  <div class="field">
-    <%= form.label :prod_name %>
-    <%= form.text_field :prod_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :producer_name %>
-    <%= form.text_field :producer_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :purchase_date %>
-    <%= form.text_field :purchase_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :confirmation_purchase_date %>
-    <%= form.date_field :confirmation_purchase_date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :original_offer_price %>
-    <%= form.text_field :original_offer_price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cms_marketplace %>
-    <%= form.text_field :cms_marketplace %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cms_vendor %>
-    <%= form.text_field :cms_vendor %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :full_price %>
-    <%= form.text_field :full_price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :name_subscription_plan %>
-    <%= form.text_field :name_subscription_plan %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phone_checkout_local_code %>
-    <%= form.text_field :phone_checkout_local_code %>
-  </div>
-
-  <div class="field">
-    <%= form.label :phone_checkout_number %>
-    <%= form.text_field :phone_checkout_number %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.submit 'Enviar', class: 'btn btn-success' %>
 <% end %>

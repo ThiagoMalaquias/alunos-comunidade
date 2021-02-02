@@ -5,7 +5,7 @@ class AlunosController < ApplicationController
   # GET /alunos
   # GET /alunos.json
   def index
-    @alunos = Aluno.where(status: "approved").order("name asc")
+    @alunos = Aluno.order("name asc")
   end
 
   # GET /alunos/1
@@ -47,7 +47,7 @@ class AlunosController < ApplicationController
   def update
     respond_to do |format|
       if @aluno.update(aluno_params)
-        format.html { redirect_to @aluno, notice: 'Aluno was successfully updated.' }
+        format.html { redirect_to alunos_url, notice: 'Aluno was successfully updated.' }
         format.json { render :show, status: :ok, location: @aluno }
       else
         format.html { render :edit }
@@ -74,6 +74,6 @@ class AlunosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def aluno_params
-      params.fetch(:aluno, {}).permit(:callback_type, :hottok, :aff, :aff_name, :currency, :xcode, :payment_type, :status, :prod, :prod_name, :producer_name, :purchase_date, :confirmation_purchase_date, :original_offer_price, :cms_marketplace, :cms_vendor, :price, :full_price, :name_subscription_plan, :email, :name, :first_name, :last_name, :phone_checkout_local_code, :phone_checkout_number)
+      params.fetch(:aluno, {}).permit(:callback_type, :hottok, :aff, :aff_name, :currency, :xcode, :payment_type, :status, :prod, :prod_name, :producer_name, :purchase_date, :confirmation_purchase_date, :original_offer_price, :cms_marketplace, :cms_vendor, :price, :full_price, :name_subscription_plan, :email, :name, :first_name, :last_name, :phone_checkout_local_code, :phone_checkout_number,:vencimento)
     end
 end

@@ -1,5 +1,18 @@
-<h1>New Aluno</h1>
+<div class="container-fluid">
+  <%= link_to alunos_path, class: 'btn btn-light float-right' do %>
+    <span class="glyphicon glyphicon-plus"></span>
+    Voltar
+  <% end %>
 
-<%= render 'form', aluno: @aluno %>
+  <h1 class="mt-4">Novo Aluno</h1>
+  <br>
+  <div class="card mb-4">
+    <div class="card-body">
 
-<%= link_to 'Back', alunos_path %>
+      <%= render 'form', aluno: @aluno %>
+
+    </div>
+  </div>
+</div>
+
+

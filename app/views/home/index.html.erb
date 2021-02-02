@@ -21,7 +21,7 @@
           <div class="card bg-success text-white mb-4">
               <div class="card-body">
                 <h6>Alunos Inadiplentes</h6>
-                <h4><b><%=@total_alunos%></b></h4>
+                <h4><b style="text-decoration: line-through;"><%=@total_alunos%></b></h4>
               </div>
           </div>
       </div>
@@ -50,11 +50,11 @@
                         <th>Email</th>
                         <th>Telefone</th>
                         <th>Status</th>
-                        <th>D.  Confirmação</th>
+                        <th>Data</th>
                     </tr>
                 </thead>
                 
-                <tbody>
+                <tbody style="font-size: 9pt">
                     <% @alunos.each do |aluno| %>
                         <tr>
                             <td style="text-transform: capitalize;"><%= aluno.name %></td>
@@ -62,7 +62,9 @@
                             <td><%= aluno.email %></td>
                             <td>
                             <% if aluno.phone_checkout_local_code.present? %>
-                                (<%= aluno.phone_checkout_local_code %>) <%= aluno.phone_checkout_number %>
+                                <a href="https://api.whatsapp.com/send?phone=55<%= aluno.phone_checkout_local_code %><%= aluno.phone_checkout_number %>&text=Fala%20<%= aluno.name %>%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20o%20Thiago%20do%20Torne-se%20um%20Programador.%0A" target="_black" style="color:#000">
+                                    (<%= aluno.phone_checkout_local_code %>) <%= aluno.phone_checkout_number %>
+                                </a>
                             <% end %>
                             </td>
                             <td><%= status_pagamento_aluno(aluno.status) %></td>
