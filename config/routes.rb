@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
+  resources :administradors
   resources :alunos
-  resources :admins
 
   root to: "home#index"
 
   get '/elements', to: "home#elements"
-  get '/generic', to: "home#generic"
+  
+  get '/login', to: "login#index"
+  post '/logar', to: "login#logar"
+  get '/sair', to: "login#deslogar"
 
   #==================== API ============================================================
   match '/alunos', to: 'application#options', via: :options

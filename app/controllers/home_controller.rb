@@ -4,5 +4,5 @@ class HomeController < ApplicationController
   end
 
   def elements; end
-  def generic; end
+
 end

@@ -11,43 +11,45 @@
       </div>
     </div>
   </header>
+
+
+
   <div class="inner" style="overflow: auto;">
     <p id="notice"><%= notice %></p>
     <table>
-      <thead>
+      <thead style="font-size: 13pt;">
         <tr>
           <th>Nome</th>
           <th>Plano</th>
           <th>Email</th>
-          <th>DDD</th>
           <th>Telefone</th>
-          <th>Tipo de Pagamento</th>
           <th>Status</th>
-          <th>Nome do Produto</th>
-          <th>Data de Confirmação</th>
-          <th>Preço de Venda</th>
-          <th>Preço de Custo</th>
+          <th>D.  Confirmação</th>
+          <th></th>
+          <th></th>
         </tr>
       </thead>
     
-      <tbody>
+      <tbody style="font-size: 9pt;">
         <% @alunos.each do |aluno| %>
           <tr>
-            <td><%= aluno.name %></td>
+            <td style="text-transform: capitalize;"><%= aluno.name %></td>
             <td><%= aluno.name_subscription_plan %></td>
             <td><%= aluno.email %></td>
-            <td><%= aluno.phone_checkout_local_code %></td>
-            <td><%= aluno.phone_checkout_number %></td>
-            <td><%= aluno.payment_type %></td>
-            <td><%= aluno.status %></td>
-            <td><%= aluno.prod_name %></td>
-            <td><%= aluno.confirmation_purchase_date%></td>
-            <td><%= aluno.cms_vendor %></td>
-            <td><%= aluno.price %></td>
+            <td>
+              <% if aluno.phone_checkout_local_code.present? %>
+                (<%= aluno.phone_checkout_local_code %>) <%= aluno.phone_checkout_number %>
+              <% end %>
+            </td>
+            <td><%= status_pagamento_aluno(aluno.status) %></td>
+            <td><%= aluno.confirmation_purchase_date.strftime("%d/%m/%Y")%></td>
+            <td></td>
+            <td></td>
           </tr>
         <% end %>
       </tbody>
     </table>
+    
   </div>
   <%= link_to 'Novo Aluno', new_aluno_path, style: "margin: 0 7%;" %>
 </section>

@@ -1,0 +1,32 @@
+<!-- Footer -->
+<section id="footer" style="height: 100vh">
+  <div class="inner" style="max-width: 600px; margin: auto;">
+    <header>
+      <h2>Digite usuário e senha para acessar o sistema</h2>
+    </header>
+    <form class="form-horizontal" role="form" action="/logar" accept-charset="UTF-8" method="post">
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" name="email" name="login[email]" id="email" />
+      </div>
+      <div class="field">
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" name="login[senha]" id="senha" />
+      </div>
+
+      <div class="row uniform 100%">
+        <div class="6u$ 12u$(small)">
+          <input type="checkbox" id="lembre" name="login[lembrar]" name="lembre">
+          <label for="lembre">Lembre de Mim</label>
+        </div>
+      </div>
+
+      <ul class="actions">
+        <li><input type="submit" value="Entrar" class="alt" /></li>
+      </ul>
+    </form>
+  </div>
+</section>
+
+
+

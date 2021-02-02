@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user!
     if request.path_parameters[:format] != 'json'
-      # if cookies[:alunos_comunidade_admin].blank?
-      #   redirect_to "/login"
-      # end
+      if cookies[:alunos_comunidade].blank?
+        redirect_to "/login"
+      end
     end
   end
 

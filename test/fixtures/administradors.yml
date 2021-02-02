@@ -3,11 +3,9 @@
 one:
   nome: MyString
   email: MyString
-  telefone: MyString
   senha: MyString
 
 two:
   nome: MyString
   email: MyString
-  telefone: MyString
   senha: MyString
