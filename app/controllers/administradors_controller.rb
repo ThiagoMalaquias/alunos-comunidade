@@ -28,7 +28,7 @@ class AdministradorsController < ApplicationController
 
     respond_to do |format|
       if @administrador.save
-        format.html { redirect_to @administrador, notice: 'Administrador was successfully created.' }
+        format.html { redirect_to administradors_url, notice: 'Administrador was successfully created.' }
         format.json { render :show, status: :created, location: @administrador }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class AdministradorsController < ApplicationController
   def update
     respond_to do |format|
       if @administrador.update(administrador_params)
-        format.html { redirect_to @administrador, notice: 'Administrador was successfully updated.' }
+        format.html { redirect_to administradors_url, notice: 'Administrador was successfully updated.' }
         format.json { render :show, status: :ok, location: @administrador }
       else
         format.html { render :edit }
