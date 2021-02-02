@@ -1,69 +1,77 @@
-<!-- Banner -->
-<section id="banner">
-  <div class="inner">
-    <h1><span>Viva como se fosse morrer amanhã. <br/> Aprenda como se fosse viver para sempre.</span></h1>
-    <ul class="actions">
-      <li><a href="#two" class="button alt">Get Started</a></li>
-    </ul>
-  </div>
-</section>
-
-<!-- One -->
-<section id="one" style="background-image: linear-gradient(#fff, #f1f1f1);">
-  <div class="inner">
-    <header>
-      <h2>Nossos Ideais</h2>
-    </header>
-    <p>Somos uma comunidade que se importa com sua evolução, por isso você vai aprender através de mentorias.</p>
-    <p>Benefícios de aprender por mentorias:</p>
-    <ul>
-      <li>Aprenda com quem tem experiência.</li>
-      <li>Aprenda com os erros e acertos do seu mentor.</li>
-      <li>Tenha auxílio e direcionamento do que fazer sempre.</li>
-      <li>Encurte o máximo a curva de aprendizado.</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Three -->
-<section id="three">
-  <header>
-    <h2 class="text-center mb-4">Alunos</h2>
-  </header>
-  <div class="inner alunos">
-    <div class="row">
-    <%@alunos.each do |aluno|%>
-      <div class="col-md-4">
-        <a href="/alunos/<%= aluno.id %>" style="cursor: pointer; text-decoration: none;">
-          <div class="content mb-4">
-            <header>
-              <h3 class="text-center"><%= aluno.name%></h3>
-            </header>
-            <div>
-              <strong>Email:</strong>
-              <span style="font-size: 17px"><%= aluno.email %></span>
-  
-              <br>
-              <strong>Telefone:</strong>
-              <a href="https://api.whatsapp.com/send?phone=55<%= aluno.phone_checkout_local_code %><%= aluno.phone_checkout_number%>&amp;text=Fala%20<%= aluno.first_name%> <%= aluno.last_name%>%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20o%20Thiago%20do%20Torne-se%20um%20Programador.%0A" target="_blank">
-                (<%= aluno.phone_checkout_local_code %>) <%= aluno.phone_checkout_number%>
-              </a>
-  
-              <br>
-              <strong>Plano:</strong>
-              <span style="font-size: 17px;"><%= aluno.name_subscription_plan %></span>
-            </div>
+<div class="container-fluid">
+  <h1 class="mt-4 mb-4">Dashboard</h1>
+  <div class="row">
+      <div class="col-xl-3 col-md-6">
+          <div class="card bg-primary text-white mb-4">
+              <div class="card-body">
+                <h6>Todos os Alunos</h6>
+                <h4><b><%=@total_alunos%></b></h4>
+              </div>
           </div>
-        </a>
       </div>
-      <%end%>
-    </div>
+      <div class="col-xl-3 col-md-6">
+          <div class="card bg-warning text-white mb-4">
+              <div class="card-body">
+                <h6>Alunos Ativos</h6>
+                <h4><b><%=@alunos_ativos%></b></h4>
+              </div>
+          </div>
+      </div>
+      <div class="col-xl-3 col-md-6">
+          <div class="card bg-success text-white mb-4">
+              <div class="card-body">
+                <h6>Alunos Inadiplentes</h6>
+                <h4><b><%=@total_alunos%></b></h4>
+              </div>
+          </div>
+      </div>
+      <div class="col-xl-3 col-md-6">
+          <div class="card bg-danger text-white mb-4">
+              <div class="card-body">
+                <h6>Alunos Cancelados</h6>
+                <h4><b><%=@alunos_cancelados%></b></h4>
+              </div>
+          </div>
+      </div>
   </div>
-</section>
 
-<!-- Footer -->
-<section id="footer">
-    <div class="copyright text-center" style="color: #fff"> 
-      &copy; Didox Bussines: Comundidade Torne-se um Programador</a>
-    </div> 
-</section>
+  <div class="card mb-4">
+      <div class="card-header">
+          <i class="fas fa-table mr-1"></i>
+         Alunos
+      </div>
+      <div class="card-body">
+          <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Plano</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Status</th>
+                        <th>D.  Confirmação</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <% @alunos.each do |aluno| %>
+                        <tr>
+                            <td style="text-transform: capitalize;"><%= aluno.name %></td>
+                            <td><%= aluno.name_subscription_plan %></td>
+                            <td><%= aluno.email %></td>
+                            <td>
+                            <% if aluno.phone_checkout_local_code.present? %>
+                                (<%= aluno.phone_checkout_local_code %>) <%= aluno.phone_checkout_number %>
+                            <% end %>
+                            </td>
+                            <td><%= status_pagamento_aluno(aluno.status) %></td>
+                            <td><%= aluno.confirmation_purchase_date.strftime("%d/%m/%Y") rescue ""%></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>
