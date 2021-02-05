@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root to: "home#index"
 
-  get '/elements', to: "home#elements"
+  get '/vencimentos', to: "home#vencimentos"
   
   get '/login', to: "login#index"
   post '/logar', to: "login#logar"

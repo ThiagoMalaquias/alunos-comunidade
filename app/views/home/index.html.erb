@@ -20,8 +20,8 @@
       <div class="col-xl-3 col-md-6">
           <div class="card bg-success text-white mb-4">
               <div class="card-body">
-                <h6>Alunos Inadiplentes</h6>
-                <h4><b style="text-decoration: line-through;"><%=@total_alunos%></b></h4>
+                <h6><a href="/vencimentos">Alunos com Venc. Hoje</a></h6>
+                <h4><b><%=@alunos_vencimento%></b></h4>
               </div>
           </div>
       </div>
@@ -51,10 +51,11 @@
                         <th>Telefone</th>
                         <th>Status</th>
                         <th>Data</th>
+                        <th>Vencimento</th>
                     </tr>
                 </thead>
                 
-                <tbody style="font-size: 9pt">
+                <tbody>
                     <% @alunos.each do |aluno| %>
                         <tr>
                             <td style="text-transform: capitalize;"><%= aluno.name %></td>
@@ -69,6 +70,7 @@
                             </td>
                             <td><%= status_pagamento_aluno(aluno.status) %></td>
                             <td><%= aluno.confirmation_purchase_date.strftime("%d/%m/%Y") rescue ""%></td>
+                            <td><%= aluno.vencimento%></td>
                         </tr>
                     <% end %>
                 </tbody>
