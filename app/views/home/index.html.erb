@@ -63,7 +63,8 @@
                             <td><%= aluno.email %></td>
                             <td>
                             <% if aluno.phone_checkout_local_code.present? %>
-                                <a href="https://api.whatsapp.com/send?phone=55<%= aluno.phone_checkout_local_code %><%= aluno.phone_checkout_number %>&text=Fala%20<%= aluno.name %>%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20o%20Thiago%20do%20Torne-se%20um%20Programador.%0A" target="_black" style="color:#000">
+                                <% @adm = Administrador.find(JSON.parse(cookies[:alunos_comunidade])["id"]) %>
+                                <a href="https://api.whatsapp.com/send?phone=55<%= aluno.phone_checkout_local_code %><%= aluno.phone_checkout_number %>&text=Fala%20<%= aluno.name %>%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20o%20<%= @adm.nome%>%20do%20Torne-se%20um%20Programador.%0A" target="_black" style="color:#000">
                                     (<%= aluno.phone_checkout_local_code %>) <%= aluno.phone_checkout_number %>
                                 </a>
                             <% end %>
