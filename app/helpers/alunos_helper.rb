@@ -23,10 +23,27 @@ module AlunosHelper
       return "Atrasado"
       
     elsif status == "completed"
-      return "Cancelado"
+      return "Completado"
 
+    elsif status == "billet_printed"
+      return "Boleto Gerado"
+
+    elsif status == "dispute"
+      return "Disputa"
+
+    elsif status == "blocked"
+      return "Bloqueado"
+
+    elsif status == "chargeback"
+      return "Estorno"
+
+    elsif status == "expired"
+      return "Expirado"
+
+    elsif status == "wayting_payment"
+      return "Meio de Pagamento"
     else
-      return "billet_printed, dispute, completed, blocked, chargeback, expired, wayting_payment"
+      return "Cancelado"
     end
   end
 end
