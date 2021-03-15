@@ -5,7 +5,7 @@
           <div class="card bg-primary text-white mb-4">
               <div class="card-body">
                 <h6>Todos os Alunos</h6>
-                <h4><b><%=@total_alunos%></b></h4>
+                <h4><b><%=@qtd_total_alunos%></b></h4>
               </div>
           </div>
       </div>
@@ -13,15 +13,15 @@
           <div class="card bg-warning text-white mb-4">
               <div class="card-body">
                 <h6>Alunos Ativos</h6>
-                <h4><b><%=@alunos_ativos%></b></h4>
+                <h4><b><%=@qtd_alunos_ativos%></b></h4>
               </div>
           </div>
       </div>
       <div class="col-xl-3 col-md-6">
           <div class="card bg-success text-white mb-4">
               <div class="card-body">
-                <h6><a style="color: #fff" href="/vencimentos">Alunos com Venc. Hoje</a></h6>
-                <h4><b><%=@alunos_vencimento%></b></h4>
+                <h6><a style="color: #fff" href="/atrasados">Alunos Atrasados</a></h6>
+                <h4><b><%=@qtd_alunos_atrasados%></b></h4>
               </div>
           </div>
       </div>
@@ -29,7 +29,7 @@
           <div class="card bg-danger text-white mb-4">
               <div class="card-body">
                 <h6>Alunos Cancelados</h6>
-                <h4><b><%=@alunos_cancelados%></b></h4>
+                <h4><b><%=@qtd_alunos_cancelados%></b></h4>
               </div>
           </div>
       </div>
@@ -56,7 +56,7 @@
                 </thead>
                 
                 <tbody>
-                    <% @alunos.each do |aluno| %>
+                    <% @alunos_ativos.each do |aluno| %>
                         <tr>
                             <td style="text-transform: capitalize;"><%= aluno.name %></td>
                             <td><%= aluno.name_subscription_plan %></td>

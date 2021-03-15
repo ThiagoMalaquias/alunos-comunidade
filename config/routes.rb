@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   get '/vencimentos', to: "home#vencimentos"
+  get '/atrasados', to: "home#atrasados"
   
   get '/login', to: "login#index"
   post '/logar', to: "login#logar"
