@@ -4,9 +4,7 @@ class LoginController < ApplicationController
   layout 'login'
 
   def index
-    if cookies[:alunos_comunidade].present?
-      redirect_to "/"
-    end
+    redirect_to "/" if cookies[:alunos_comunidade].present?
   end
 
   def logar
@@ -14,23 +12,19 @@ class LoginController < ApplicationController
     if user.present?
       time = params["login"]["lembrar"] == "on" ? 1.year.from_now : 30.minutes.from_now
       user = user.first
-      value = {
-        id: user.id,
-        nome: user.nome,
-        email: user.email
-      }
+      value = { id: user.id, nome: user.nome, email: user.email }
       cookies[:alunos_comunidade] = { value: value.to_json, expires: time, httponly: true }
 
-      redirect_to root_path
-    else
-      flash[:erro] = "Email ou senha inválidos"
-      redirect_to login_path
+      redirect_to root_path 
+      return     
     end
+
+    flash[:erro] = "Email ou senha inválidos"
+    redirect_to login_path
   end
 
   def deslogar
     cookies[:alunos_comunidade] = nil
     redirect_to login_path
   end
-
 end

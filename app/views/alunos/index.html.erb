@@ -1,12 +1,15 @@
 <div class="container-fluid">
-
   <%= link_to new_aluno_path, class: 'btn btn-primary float-right' do %>
-    <span class="glyphicon glyphicon-plus"></span>
     Novo Aluno
   <% end %>
-  
+  <%= link_to "javascript:importarCSV()", class: 'btn btn-success float-right mr-2' do %>
+    <i class="fa fa-file-excel-o" aria-hidden="true"></i>
+    Importar
+  <% end %>
   <h1 class="mt-4 mb-4">Alunos</h1>
-
+  <form action="/alunos/importar" method="post" enctype="multipart/form-data" class="form-file" style="display: none">
+    <input type="file" name="arquivo">
+  </form>
   <div class="card mb-4">
     <div class="card-body">
       <div class="table-responsive">
@@ -16,33 +19,32 @@
               <th>Nome</th>
               <th>Plano</th>
               <th>Email</th>
-              <th>Telefone</th>
               <th>Status</th>
               <th>Data</th>
-              <th>Vencimento</th>
-              <th></th>
-              <th></th>
+              <th>Categoria</th>
               <th></th>
             </tr>
           </thead>
-          
           <tbody>
             <% @alunos.each do |aluno| %>
               <tr>
                 <td style="text-transform: capitalize;"><%= aluno.name %></td>
                 <td><%= aluno.name_subscription_plan %></td>
                 <td><%= aluno.email %></td>
+                <td><%= aluno.status %></td>
+                <td><%= aluno.purchase_date.to_date.strftime("%d/%m/%Y") rescue "" %></td>
+                <td><%= aluno.category %></td>
                 <td>
-                <% if aluno.phone_checkout_local_code.present? %>
-                    (<%= aluno.phone_checkout_local_code %>) <%= aluno.phone_checkout_number %>
-                <% end %>
+                  <%= link_to aluno, class: 'btn btn-primary btn-sm w-100' do %>
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                  <% end %>
+                  <%= link_to edit_aluno_path(aluno), class: 'btn btn-warning btn-sm w-100' do %>
+                    <i class="fa fa-eraser" aria-hidden="true"></i>
+                  <% end %>
+                  <%= link_to aluno, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn btn-danger btn-sm w-100' do %>
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                  <% end %>
                 </td>
-                <td><%= status_pagamento_aluno(aluno.status) %></td>
-                <td><%= aluno.confirmation_purchase_date.strftime("%d/%m/%Y") rescue ""%></td>
-                <td><%= aluno.vencimento %></td>
-                <td><%= link_to 'Mostrar', aluno %></td>
-                <td><%= link_to 'Editar', edit_aluno_path(aluno) %></td>
-                <td><%= link_to 'Apagar', aluno, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
             <% end %>
           </tbody>
@@ -51,4 +53,15 @@
     </div>
   </div>
 </div>
-
+<script>
+  const form = document.querySelector('.form-file')
+  const inputFile = document.querySelector('[name="arquivo"]')
+  
+  function importarCSV() {
+    inputFile.click()
+  }
+  
+  inputFile.addEventListener('input', (e) => {
+    form.requestSubmit()
+  })
+</script>

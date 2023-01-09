@@ -27,5 +27,4 @@ class HomeController < ApplicationController
   def atrasados
     @alunos = Aluno.all.order("name asc").where(status: "delayed")
   end
-
 end

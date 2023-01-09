@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :administradors
-  resources :alunos
+
+  resources :alunos do
+    post 'importar', on: :collection
+  end
 
   root to: "home#index"
 
@@ -14,5 +17,4 @@ Rails.application.routes.draw do
   #==================== API ============================================================
   match '/alunos', to: 'application#options', via: :options
   match "/serviceworker.js", to: 'application#options', via: [:get, :post]
-
 end

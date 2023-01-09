@@ -5,9 +5,9 @@
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "4.3.0",
-    "turbolinks": "^5.2.0",
-    "bootstrap": "4.5.3"
+    "@rails/webpacker": "5.4.3",
+    "bootstrap": "4.5.3",
+    "turbolinks": "^5.2.0"
   },
   "keywords": [
     "css",
@@ -22,7 +22,6 @@
   ],
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^3.11.0",
     "autoprefixer": "10.0.1",
     "browser-sync": "2.26.13",
     "chokidar": "3.4.3",
@@ -32,6 +31,7 @@
     "pug": "3.0.0",
     "sass": "1.28.0",
     "shelljs": "0.8.4",
-    "upath": "2.0.0"
+    "upath": "2.0.0",
+    "webpack-dev-server": "^3.11.0"
   }
 }

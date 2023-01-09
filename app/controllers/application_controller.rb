@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   before_action  :authenticate_user!, :set_allow_origin
   skip_before_action :verify_authenticity_token, only: [:options]
 
-
   def authenticate_user!
     if request.path_parameters[:format] != 'json'
       if cookies[:alunos_comunidade].blank?
