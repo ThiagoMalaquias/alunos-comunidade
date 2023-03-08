@@ -1,5 +1,4 @@
 class Aluno < ApplicationRecord
- 
   def self.params_aluno(params)
     aluno = self.where(hottok: params[:hottok], email:params[:email]).first || Aluno.new
     aluno.callback_type = params[:callback_type]

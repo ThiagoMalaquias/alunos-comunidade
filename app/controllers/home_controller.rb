@@ -1,11 +1,11 @@
 class HomeController < ApplicationController
   def index
     @alunos = Aluno.all
-    @alunos_ativos         =  @alunos.order("name asc").where(status: "approved")
+    @alunos_ativos         =  @alunos.order("name asc").where(status: "Ativo")
     @qtd_total_alunos      =  @alunos.count
-    @qtd_alunos_ativos     =  @alunos.where(status: "approved").count
-    @qtd_alunos_cancelados =  @alunos.where(status: "canceled").count
-    @qtd_alunos_atrasados  =  @alunos.where(status: "delayed").count
+    @qtd_alunos_ativos     =  @alunos.where(status: "Ativo").count
+    @qtd_alunos_cancelados =  @alunos.where.not(status: "Ativo").count
+    @qtd_alunos_sem_descricao = @alunos.where(status: "Ativo", description: nil).count
   end
 
   def vencimentos
