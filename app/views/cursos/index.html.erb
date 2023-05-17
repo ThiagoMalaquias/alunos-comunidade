@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <h1 class="mt-4 mb-4">Cursos</h1>
+  <div class="card mb-4">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th>titulo</th>
+              <th>codeNome</th>
+              <th>videoIntro</th>
+              <th>categorias</th>
+              <th>professor</th>
+              <th>tipo</th>
+              <th>preco</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @cursos.each do |curso| %>
+              <tr>
+                <td><%= curso.titulo %></td>
+                <td><%= curso.codeNome %></td>
+                <td><%= curso.videoIntro %></td>
+                <td><%= curso.categorias %></td>
+                <td><%= curso.professor %></td>
+                <td><%= curso.tipo %></td>
+                <td><%= curso.preco %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const form = document.querySelector('.form-file')
+  const inputFile = document.querySelector('[name="arquivo"]')
+  
+  function importarCSV() {
+    inputFile.click()
+  }
+  
+  inputFile.addEventListener('input', (e) => {
+    form.requestSubmit()
+  })
+</script>

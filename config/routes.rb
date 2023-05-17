@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     post 'importar', on: :collection
   end
 
+  resources :cursos
+
   root to: "home#index"
 
   get '/vencimentos', to: "home#vencimentos"

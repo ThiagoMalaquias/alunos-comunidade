@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_09_134302) do
+ActiveRecord::Schema.define(version: 2023_05_16_040930) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,21 @@ ActiveRecord::Schema.define(version: 2023_01_09_134302) do
     t.string "category"
     t.text "description"
     t.string "discord"
+  end
+
+  create_table "cursos", force: :cascade do |t|
+    t.string "titulo"
+    t.string "codeNome"
+    t.string "descricao"
+    t.string "videoIntro"
+    t.string "professor"
+    t.string "capa"
+    t.string "link"
+    t.string "tipo"
+    t.string "preco"
+    t.text "categorias", default: [], array: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

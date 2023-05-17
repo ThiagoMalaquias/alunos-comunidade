@@ -1,0 +1,67 @@
+<div class="container-fluid">
+  <h1 class="mt-4 mb-4" style="text-transform: capitalize;"><%= @aluno.name %></h1>
+
+
+  <div class="card mb-4">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <tbody>
+                <tr>
+                    <td style="text-transform: capitalize;"><b>Name:</b> <%= @aluno.name %></td>
+                    <td><b>Plano:</b> <%= @aluno.name_subscription_plan %></td>
+                </tr>
+
+                <tr>
+                    <td><b>Callback Type:</b> <%= @aluno.callback_type %></td>
+                    <td><b>Hottok:</b> <%= @aluno.hottok %></td>
+                </tr>
+
+                <tr>
+                    <td><b>Currency:</b> <%= @aluno.currency %></td>
+                    <td><b>Payment Type:</b> <%= tipo_pagamento(@aluno.payment_type) %></td>
+                </tr>
+
+                <tr>
+                    <td><b>Prod:</b> <%= @aluno.prod %></td>
+                    <td><b>Prod Name:</b> <%= @aluno.prod_name %></td>
+                </tr>
+
+                <tr>
+                    <td><b>Producer Name:</b> <%= @aluno.producer_name %></td>
+                    <td><b>Purchase Date:</b> <%= @aluno.purchase_date.strftime("%d/%m/%Y") rescue "" %></td>
+                </tr>
+
+                <tr>
+                    <td><b>Price:</b> <%= @aluno.price %></td>
+                    <td><b>Full Price:</b> <%= @aluno.full_price %></td>
+                </tr>
+    
+                <tr>
+                    <td><b>Email:</b> <%= @aluno.email %></td>
+                    <td>
+                    <b>Telefone:</b>
+                    <% if @aluno.phone_checkout_local_code.present? %>
+                        <a href="https://api.whatsapp.com/send?phone=55<%= @aluno.phone_checkout_local_code %><%= @aluno.phone_checkout_number %>&text=Fala%20<%= @aluno.name %>%2C%20tudo%20bem%3F%20Aqui%20%C3%A9%20o%20Thiago%20do%20Torne-se%20um%20Programador.%0A" target="_black" style="color:#000">
+                            (<%= @aluno.phone_checkout_local_code %>) <%= @aluno.phone_checkout_number %>
+                        </a>
+                    <% end %>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Status:</b> <%= status_pagamento_aluno(@aluno.status) %></td>
+                    <td><b>Confirmation Date:</b> <%= @aluno.confirmation_purchase_date.strftime("%d/%m/%Y") rescue ""%></td>
+                </tr>
+                <% if @aluno.vencimento.present? %>
+                  <tr>
+                    <td><b>Vencimento:</b> <%= @aluno.vencimento%></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+  <%= link_to 'Editar', edit_aluno_path(@aluno) %> |
+  <%= link_to 'Voltar', alunos_path %>
+</div>
