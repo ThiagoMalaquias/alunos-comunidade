@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_16_040930) do
+ActiveRecord::Schema.define(version: 2023_05_17_192731) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,11 @@ ActiveRecord::Schema.define(version: 2023_05_16_040930) do
     t.text "categorias", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "valor_de"
+    t.string "parcela"
+    t.string "desconto"
+    t.string "horas"
+    t.boolean "destaque", default: false
   end
 
 end

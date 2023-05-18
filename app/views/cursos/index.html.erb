@@ -26,6 +26,11 @@
                 <td><%= curso.professor %></td>
                 <td><%= curso.tipo %></td>
                 <td><%= curso.preco %></td>
+                <td>
+                  <%= link_to edit_curso_path(curso), class: 'btn btn-warning btn-sm w-100' do %>
+                    <i class="fa fa-eraser" aria-hidden="true"></i>
+                  <% end %>
+                </td>
               </tr>
             <% end %>
           </tbody>
