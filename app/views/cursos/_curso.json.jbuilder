@@ -1,1 +1,1 @@
-json.extract! curso, :id, :titulo, :codeNome, :descricao, :videoIntro, :professor, :capa, :link, :tipo, :preco, :categorias, :valor_de, :parcela, :desconto, :horas, :destaque
+json.extract! curso, :id, :titulo, :codeNome, :descricao, :videoIntro, :professor, :capa, :tipo,  :categorias, :link, :valor_de, :preco, :parcela, :desconto, :horas, :aulas, :beneficios, :destaque

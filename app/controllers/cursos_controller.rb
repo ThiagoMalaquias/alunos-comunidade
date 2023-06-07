@@ -1,8 +1,11 @@
 class CursosController < ApplicationController
-  before_action :set_curso, only: [:edit, :update]
+  before_action :set_curso, only: [:show, :edit, :update]
 
   def index
     @cursos = Curso.order("titulo asc")
+  end
+
+  def show
   end
 
   def edit

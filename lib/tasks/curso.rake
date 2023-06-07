@@ -4,20 +4,28 @@ namespace :curso do
     require 'net/http'
     require 'json'
 
-    url = URI.parse('http://localhost:3002/cursos.json')
+    url = URI.parse('http://localhost:3002/orderCursos.json')
     response = Net::HTTP.get_response(url)
     cursos = JSON.parse(response.body)
 
-    cursos.each do |curso|
+    cursos.each_with_index do |curso, index|
       Curso.create(
+        id: (index + 1),
         titulo: curso["titulo"],
         codeNome: curso["codeNome"],
         descricao: curso["descricao"],
         videoIntro: curso["videoIntro"],
         categorias: curso["categorias"],
         professor: curso["professor"],
+        tipo: curso["tipo"],
         capa: curso["capa"],
-        preco: curso["preco"]
+        preco: curso["preco"],
+        valor_de: curso["valor_de"],
+        parcela: curso["parcela"],
+        desconto: curso["desconto"],
+        horas: curso["horas"],
+        aulas: curso["aulas"],
+        destaque: curso["destaque"]
       )
     end
   end

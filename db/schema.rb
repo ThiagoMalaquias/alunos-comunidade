@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_17_192731) do
+ActiveRecord::Schema.define(version: 2023_05_17_192733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(version: 2023_05_17_192731) do
     t.string "desconto"
     t.string "horas"
     t.boolean "destaque", default: false
+    t.text "beneficios", default: [], array: true
+    t.string "aulas"
   end
 
 end
